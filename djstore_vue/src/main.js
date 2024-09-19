@@ -5,6 +5,6 @@ import store from './store'
 import axios from 'axios';
 
 
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'http://localhost:8000/';
 
 createApp(App).use(store).use(router, axios).mount('#app')
