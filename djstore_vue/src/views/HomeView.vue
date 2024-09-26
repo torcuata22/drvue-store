@@ -22,7 +22,7 @@
         :key="product.id"
       >
         <div class="box">
-          <figure class="image mb-4">
+          <figure class="image mb-4 image-size">
             <img :src="product.get_thumbnail" alt="Product Thumbnail" />
           </figure>
           <h3 class="is-size-4">{{ product.name }}</h3>
@@ -48,15 +48,21 @@ export default {
   },
   mounted() {
     this.getLatestProducts()
+    document.title ='Home | Crook and Needle';
   },
   methods: {
     async getLatestProducts() {
-      try {
-        const response = await axios.get('api/v1/latest-products') //removed http://localhost:8000/
+      this.$store.commit('setIsLoading', true)
+      await axios
+      .get('api/v1/latest-products') //removed http://localhost:8000/
+      .then(response => {
         this.latestProducts = response.data
-      } catch (error) {
+      })
+        
+       .catch (error =>{
         console.error('Failed to fetch latest products:', error)
-      }
+      })
+      this.$store.commit('setIsLoading', false)
     }
   }
 }
@@ -67,5 +73,12 @@ export default {
   margin-top: -1.25rem;
   margin-left: -1.25rem;
   margin-right: -1.25rem;
+}
+
+.image-size {
+  height: 250px;
+  width: 250px;
+  display:block;
+  margin:auto;
 }
 </style>
