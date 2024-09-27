@@ -13,4 +13,4 @@ urlpatterns = [
 ] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #TODO:https://www.youtube.com/watch?v=Yg5zkd9nm6w&list=PLhf0_VlTw9T23viD9PDRxWfucKMpxEqU9
-#TODO: minute 45
+#TODO: minute 1hour 28minutes
