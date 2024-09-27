@@ -8,8 +8,9 @@
                 <thead>
                     <tr>
                         <th>Product</th>
-                        <th>Quantity</th>
                         <th>Price</th>
+                        <th>Quantity</th>
+                        <th>total</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -18,7 +19,7 @@
                         v-for="item in cart.items"
                         v-bind:key="item.product.id"
                         v-bind:initialItem="item"
-                        />
+                        v-on:removeFromCart="removeFromCart" />
                 </tbody>
             </table>
             <p v-else>Your cart is empty</p>
