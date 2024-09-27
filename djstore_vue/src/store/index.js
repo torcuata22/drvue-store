@@ -18,12 +18,12 @@ export default createStore({
     }else{
       localStorage.setItem('cart', JSON.stringify(state.cart))
     }
-    if (localStorage.getItem('token')) {
-      state.token = localStorage.getItem('token')
-      state.isAuthenticated = true
+      if (localStorage.getItem('token')) {
+        state.token = localStorage.getItem('token')
+        state.isAuthenticated = true
     } else {
-      state.token = ''
-      state.isAuthenticated = false
+        state.token = ''
+        state.isAuthenticated = false
     }
   },
   addToCart(state, item) {
