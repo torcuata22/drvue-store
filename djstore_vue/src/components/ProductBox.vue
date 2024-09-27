@@ -21,3 +21,18 @@
         }
     }
 </script>
+
+<style scoped>
+.image {
+  margin-top: -1.25rem;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
+.image-size {
+  height: 250px;
+  width: 250px;
+  display:block;
+  margin:auto;
+}
+</style>
