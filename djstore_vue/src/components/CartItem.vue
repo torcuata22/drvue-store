@@ -1,5 +1,11 @@
 <template>
-
+    <tr>
+        <td><router-link :to="item.product.get_absolute_url">{{ item.product.name }}</router-link></td><td>{{ item.quantity }}</td><td>${{ getItemTotal(item).toFixed(2) }}</td>
+        <td>{{ item.product.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>${{ getItemTotal(item).toFixed(2) }}</td>
+        <td><button class="delete"></button></td>
+    </tr>
 </template>
 
 <script>
